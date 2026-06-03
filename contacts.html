@@ -4,41 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weberley's portfolio 💼</title>
-    <script src="./js/script.js" defer></script>
-    <link rel="stylesheet" href="./css/style.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        main {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea, button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <nav>
         <h1>Weberley's portfolio 💼</h1>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./projects.html">Projects</a></li>
-            <li><a href="./contact.html">Contacts</a></li>
-            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./index.html">Home 🏠</a></li>
+            <li><a href="./projects.html">Projects 📽️</a></li>
+            <li><a href="./contacts.html">Contacts 📇</a></li>
+            <li><a href="./skills.html">Skills 🛠️</a></li>
         </ul>
     </nav>
     <main>
         <h2>Contacts</h2>
 
-        <form>
-            <label for="fname">Full Name:</label><br>
-            <input type="text" id="fname" name="fname" value=""><br>
+        <form id="contacts-form">
+            <label for="fname">Full Name:</label>
+            <input type="text" id="fname" name="fname" required>
             
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" value=""><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
             
-            <p><label for="w3review">Contact Me:</label></p>
-            <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+            <label for="message">Contact Me:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
             
-            <p> 
-                <button type="submit" value="Submit">Submit</button>
-            </p>
+            <button type="submit">Submit</button>
         </form>
         
     </main>
     <footer>
         <p>Copyright 2026</p>
     </footer>
-    
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you, Weberley received your message!');
+            this.reset(); // Clears the form fields
+        });
+    </script>
 </body>
 </html>
